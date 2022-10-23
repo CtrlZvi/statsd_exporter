@@ -112,9 +112,9 @@ NOTE: Version 0.7.0 switched to the [kingpin](https://github.com/alecthomas/king
     Flags:
       -h, --help                    Show context-sensitive help (also try
                                     --help-long and --help-man).
-          --web.listen-address=":9102"
-                                    The address on which to expose the web interface
-                                    and generated Prometheus metrics.
+          --web.listen-address=:9102 ...  
+                                Addresses on which to expose metrics and web interface. Repeatable for multiple addresses.
+          --web.config.file=""      [EXPERIMENTAL] Path to configuration file that can enable TLS or authentication.
           --web.enable-lifecycle    Enable shutdown and reload via HTTP request.
           --web.telemetry-path="/metrics"
                                     Path under which to expose metrics.
@@ -170,6 +170,10 @@ NOTE: Version 0.7.0 switched to the [kingpin](https://github.com/alecthomas/king
                                     json]
           --version                 Show application version.
     ```
+
+## TLS support
+
+TLS support is provided via the [Prometheus Exporter Toolkit](https://github.com/prometheus/exporter-toolkit). Please see [its configuration documentation]9https://github.com/prometheus/exporter-toolkit/blob/master/docs/web-configuration.md) for how to configure TLS.
 
 ## Lifecycle API
 
